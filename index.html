@@ -16,20 +16,21 @@
   />
   <style>
     :root {
-      --bg: #f8fbfd;
+      --bg: #f7fbfd;
       --white: #ffffff;
-      --primary: #1f6f8b;
-      --primary-dark: #14566d;
-      --secondary: #76c7b7;
-      --secondary-dark: #4cab98;
+      --primary: #1d6f8a;
+      --primary-dark: #14576d;
+      --secondary: #74c7b6;
+      --secondary-dark: #42aa95;
       --text: #24323d;
       --muted: #667885;
-      --border: #dce7ee;
-      --soft: #eef7fb;
+      --border: #dce8ee;
+      --soft: #eef8fc;
       --soft-green: #edf9f5;
-      --shadow: 0 10px 30px rgba(20, 86, 109, 0.08);
+      --shadow: 0 12px 32px rgba(20, 86, 109, 0.08);
+      --shadow-strong: 0 18px 45px rgba(20, 86, 109, 0.14);
       --radius: 22px;
-      --radius-lg: 32px;
+      --radius-lg: 30px;
       --container: 1180px;
     }
 
@@ -45,7 +46,7 @@
 
     body {
       font-family: "Inter", sans-serif;
-      background: var(--bg);
+      background: linear-gradient(to bottom, #f8fcfe, #f4fbf8);
       color: var(--text);
       line-height: 1.6;
     }
@@ -66,17 +67,17 @@
     }
 
     .section {
-      padding: 80px 0;
+      padding: 88px 0;
     }
 
     .section-title {
       max-width: 760px;
-      margin-bottom: 40px;
+      margin-bottom: 42px;
     }
 
     .section-title .tag {
       display: inline-block;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
       padding: 8px 14px;
       border-radius: 999px;
       background: #dff1f8;
@@ -89,7 +90,7 @@
 
     .section-title h2 {
       font-size: clamp(30px, 4vw, 46px);
-      line-height: 1.15;
+      line-height: 1.12;
       margin-bottom: 14px;
     }
 
@@ -139,12 +140,12 @@
       top: 0;
       z-index: 1000;
       background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(220, 231, 238, 0.8);
     }
 
     .topbar-inner {
-      min-height: 78px;
+      min-height: 80px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -185,16 +186,16 @@
       position: relative;
       overflow: hidden;
       background:
-        radial-gradient(circle at top left, rgba(118, 199, 183, 0.18), transparent 30%),
-        radial-gradient(circle at top right, rgba(31, 111, 139, 0.14), transparent 30%),
-        linear-gradient(135deg, #eef8fc 0%, #ffffff 45%, #eefaf6 100%);
+        radial-gradient(circle at top left, rgba(116, 199, 182, 0.16), transparent 30%),
+        radial-gradient(circle at top right, rgba(29, 111, 138, 0.12), transparent 30%),
+        linear-gradient(135deg, #eef8fc 0%, #ffffff 48%, #eefaf6 100%);
       padding: 90px 0 70px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 50px;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 52px;
       align-items: center;
     }
 
@@ -211,7 +212,7 @@
 
     .hero h2 {
       font-size: clamp(38px, 5vw, 64px);
-      line-height: 1.05;
+      line-height: 1.04;
       margin-bottom: 20px;
     }
 
@@ -236,16 +237,17 @@
 
     .hero-image img {
       width: 100%;
-      height: 540px;
+      height: 560px;
       object-fit: cover;
       border-radius: var(--radius-lg);
-      box-shadow: 0 20px 50px rgba(31, 111, 139, 0.14);
+      box-shadow: var(--shadow-strong);
+      border: 4px solid rgba(255,255,255,0.7);
     }
 
     .about-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
+      grid-template-columns: 1fr 0.95fr;
+      gap: 44px;
       align-items: center;
     }
 
@@ -271,22 +273,12 @@
       font-weight: 600;
     }
 
-    .about-images {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-
-    .about-images img {
+    .about-image-single img {
       width: 100%;
-      height: 290px;
+      height: 520px;
       object-fit: cover;
-      border-radius: 24px;
-      box-shadow: var(--shadow);
-    }
-
-    .about-images img:last-child {
-      margin-top: 36px;
+      border-radius: 28px;
+      box-shadow: var(--shadow-strong);
     }
 
     .services {
@@ -300,12 +292,24 @@
     }
 
     .card {
-      background: #f9fcfe;
+      background: linear-gradient(180deg, #fbfeff, #f5fbfd);
       border: 1px solid var(--border);
       border-radius: 24px;
       padding: 28px;
       box-shadow: var(--shadow);
       transition: 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: auto -20px -40px auto;
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: rgba(116, 199, 182, 0.08);
     }
 
     .card:hover {
@@ -315,10 +319,14 @@
     .card h3 {
       font-size: 24px;
       margin-bottom: 18px;
+      position: relative;
+      z-index: 1;
     }
 
     .card ul {
       list-style: none;
+      position: relative;
+      z-index: 1;
     }
 
     .card li {
@@ -363,15 +371,17 @@
       overflow: hidden;
       box-shadow: var(--shadow);
       transition: 0.25s ease;
+      border: 1px solid rgba(220,232,238,0.6);
     }
 
     .gallery-item:hover {
       transform: translateY(-6px);
+      box-shadow: var(--shadow-strong);
     }
 
     .gallery-item img {
       width: 100%;
-      height: 260px;
+      height: 300px;
       object-fit: cover;
       transition: 0.35s ease;
     }
@@ -400,6 +410,7 @@
       border-radius: 24px;
       padding: 26px;
       box-shadow: var(--shadow);
+      border: 1px solid rgba(220,232,238,0.6);
     }
 
     .stars {
@@ -434,6 +445,7 @@
 
     .blog-card:hover {
       transform: translateY(-4px);
+      box-shadow: var(--shadow-strong);
     }
 
     .blog-chip {
@@ -463,29 +475,49 @@
       background: linear-gradient(135deg, var(--primary), var(--secondary-dark));
       color: var(--white);
       border-radius: 30px;
-      padding: 42px;
+      padding: 46px;
       box-shadow: 0 18px 40px rgba(31, 111, 139, 0.18);
       display: grid;
       grid-template-columns: 1.3fr 0.7fr;
       gap: 20px;
       align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-box::before {
+      content: "";
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
     }
 
     .cta-box h2 {
       font-size: clamp(28px, 4vw, 42px);
       line-height: 1.15;
       margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
     }
 
     .cta-box p {
-      color: rgba(255, 255, 255, 0.9);
+      color: rgba(255, 255, 255, 0.92);
       max-width: 680px;
+      position: relative;
+      z-index: 1;
     }
 
     .cta-box .btn {
       background: var(--white);
       color: var(--primary);
       justify-self: end;
+      position: relative;
+      z-index: 1;
+      min-width: 230px;
     }
 
     .cta-box .btn:hover {
@@ -518,16 +550,16 @@
     }
 
     .map-placeholder {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 320px;
-      background: #f7fafc;
-      border: 2px dashed #c9d8e2;
+      overflow: hidden;
       border-radius: 24px;
-      text-align: center;
-      color: var(--muted);
-      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .map-placeholder img {
+      width: 100%;
+      height: 100%;
+      min-height: 320px;
+      object-fit: cover;
     }
 
     footer {
@@ -581,10 +613,6 @@
       background: #1ebe5d;
     }
 
-    .mobile-menu {
-      display: none;
-    }
-
     @media (max-width: 980px) {
       .hero-grid,
       .about-grid,
@@ -605,19 +633,8 @@
         justify-self: start;
       }
 
-      .about-images img:last-child {
-        margin-top: 0;
-      }
-
       .nav {
         display: none;
-      }
-
-      .mobile-menu {
-        display: inline-flex;
-        font-size: 14px;
-        font-weight: 700;
-        color: var(--primary);
       }
     }
 
@@ -640,12 +657,12 @@
         font-size: 16px;
       }
 
-      .hero-image img {
+      .hero-image img,
+      .about-image-single img {
         height: 360px;
       }
 
       .about-features,
-      .about-images,
       .service-grid,
       .gallery-grid,
       .testimonial-grid,
@@ -733,10 +750,7 @@
       </div>
 
       <div class="hero-image">
-        <img
-          src="https://instagram.fgig23-1.fna.fbcdn.net/v/t51.2885-19/115770931_479227373067740_7650715567575161302_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=instagram.fgig23-1.fna.fbcdn.net&_nc_cat=108&_nc_oc=Q6cZ2gF865cXD7luQB8fwKJCtS5yr36nMlkAsKITF78K0zeMm9f19YLnjV1k7_WbdTRcb_c1rl-Alh6vJoenmAHjnE3c&_nc_ohc=JFIYuSvAHkwQ7kNvwER0fNq&_nc_gid=MEe1g9EWGKMaBEp_LR1LsA&edm=AP4sbd4BAAAA&ccb=7-5&oh=00_AfxG-c0VZSEN3XdKLgoozQSPH-stWWSu7FZ3TICvCNcqYA&oe=69C8B19F&_nc_sid=7a9f4b"
-          alt="Atendimento de podologia"
-        />
+        <img src="img/daniele-podologia.png" alt="Atendimento de podologia" />
       </div>
     </div>
   </section>
@@ -770,15 +784,8 @@
         </div>
       </div>
 
-      <div class="about-images">
-        <img
-          src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=900&q=80"
-          alt="Profissional da clínica"
-        />
-        <img
-          src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=900&q=80"
-          alt="Ambiente da clínica"
-        />
+      <div class="about-image-single">
+        <img src="img/daniele-hero.png" alt="Profissional da clínica" />
       </div>
     </div>
   </section>
@@ -835,43 +842,27 @@
     <div class="container">
       <div class="section-title">
         <span class="tag">Galeria</span>
-        <h2>Um espaço pronto para suas fotos reais</h2>
+        <h2>Conheça mais do atendimento e do cuidado da clínica</h2>
         <p>
-          A estrutura abaixo está pronta para receber fotos reais de atendimentos, ambiente,
-          antes e depois e resultados de procedimentos.
+          Uma apresentação visual elegante para destacar o atendimento, a profissional e os cuidados especializados.
         </p>
       </div>
 
       <div class="gallery-grid">
         <div class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=900&q=80" alt="Antes e depois" />
-          <p>Antes e depois</p>
-        </div>
-
-        <div class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=80" alt="Atendimento" />
+          <img src="img/daniele-podologia.png" alt="Atendimento" />
           <p>Atendimento</p>
         </div>
 
         <div class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=900&q=80" alt="Ambiente" />
-          <p>Ambiente</p>
-        </div>
-
-        <div class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=900&q=80" alt="Profissional" />
+          <img src="img/daniele-hero.png" alt="Profissional" />
           <p>Profissional</p>
         </div>
 
-        <div class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=900&q=80" alt="Cuidados especializados" />
+        <a class="gallery-item" href="#servicos">
+          <img src="img/daniele-podologia.png" alt="Cuidados especializados" />
           <p>Cuidados especializados</p>
-        </div>
-
-        <div class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=900&q=80" alt="Resultados" />
-          <p>Resultados</p>
-        </div>
+        </a>
       </div>
     </div>
   </section>
@@ -1012,7 +1003,7 @@
 
       <div class="contact-box">
         <div class="map-placeholder">
-          Espaço reservado para mapa, foto da fachada ou imagem da clínica.
+          <img src="galeria380.png" alt="Imagem da clínica ou localização" />
         </div>
       </div>
     </div>
