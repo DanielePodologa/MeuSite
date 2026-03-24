@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amigo do Pé | Podologia</title>
+  <meta
+    name="description"
+    content="Amigo do Pé - Clínica de podologia com atendimento acolhedor, profissional e humanizado."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --bg: #f8fbfd;
+      --white: #ffffff;
+      --primary: #1f6f8b;
+      --primary-dark: #14566d;
+      --secondary: #76c7b7;
+      --secondary-dark: #4cab98;
+      --text: #24323d;
+      --muted: #667885;
+      --border: #dce7ee;
+      --soft: #eef7fb;
+      --soft-green: #edf9f5;
+      --shadow: 0 10px 30px rgba(20, 86, 109, 0.08);
+      --radius: 22px;
+      --radius-lg: 32px;
+      --container: 1180px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(100% - 32px, var(--container));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      max-width: 760px;
+      margin-bottom: 40px;
+    }
+
+    .section-title .tag {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: #dff1f8;
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .section-title h2 {
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+
+    .section-title p {
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 24px;
+      border-radius: 16px;
+      font-weight: 700;
+      font-size: 15px;
+      transition: 0.25s ease;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: var(--white);
+      color: var(--primary);
+      border-color: var(--border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(220, 231, 238, 0.8);
+    }
+
+    .topbar-inner {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand h1 {
+      font-size: 22px;
+      color: var(--primary);
+      line-height: 1;
+    }
+
+    .brand span {
+      font-size: 12px;
+      color: var(--muted);
+      display: block;
+      margin-top: 6px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .nav a {
+      font-size: 15px;
+      color: var(--muted);
+      font-weight: 600;
+      transition: 0.2s ease;
+    }
+
+    .nav a:hover {
+      color: var(--primary);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top left, rgba(118, 199, 183, 0.18), transparent 30%),
+        radial-gradient(circle at top right, rgba(31, 111, 139, 0.14), transparent 30%),
+        linear-gradient(135deg, #eef8fc 0%, #ffffff 45%, #eefaf6 100%);
+      padding: 90px 0 70px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: #dff1f8;
+      color: var(--primary);
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .hero h2 {
+      font-size: clamp(38px, 5vw, 64px);
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 620px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    .hero-note {
+      margin-top: 16px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 540px;
+      object-fit: cover;
+      border-radius: var(--radius-lg);
+      box-shadow: 0 20px 50px rgba(31, 111, 139, 0.14);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about-text p {
+      margin-bottom: 16px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .about-features {
+      margin-top: 26px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .feature-box {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+      font-weight: 600;
+    }
+
+    .about-images {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .about-images img {
+      width: 100%;
+      height: 290px;
+      object-fit: cover;
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .about-images img:last-child {
+      margin-top: 36px;
+    }
+
+    .services {
+      background: var(--white);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: #f9fcfe;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      transition: 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    .card h3 {
+      font-size: 24px;
+      margin-bottom: 18px;
+    }
+
+    .card ul {
+      list-style: none;
+    }
+
+    .card li {
+      position: relative;
+      padding-left: 18px;
+      margin-bottom: 12px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .card li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--secondary);
+    }
+
+    .notice {
+      margin-top: 26px;
+      background: var(--soft-green);
+      color: #256858;
+      border: 1px solid #cdeee4;
+      padding: 16px 20px;
+      border-radius: 18px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .gallery-item {
+      background: var(--white);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: 0.25s ease;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-6px);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      transition: 0.35s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-item p {
+      padding: 16px 18px;
+      font-weight: 700;
+    }
+
+    .testimonials {
+      background: var(--soft);
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .testimonial {
+      background: var(--white);
+      border-radius: 24px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .stars {
+      color: #f4b940;
+      font-size: 18px;
+      margin-bottom: 14px;
+    }
+
+    .testimonial p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .testimonial strong {
+      color: var(--text);
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .blog-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      transition: 0.25s ease;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .blog-chip {
+      display: inline-block;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: var(--soft-green);
+      color: #256858;
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .blog-card h3 {
+      font-size: 21px;
+      margin-bottom: 12px;
+    }
+
+    .blog-card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, var(--primary), var(--secondary-dark));
+      color: var(--white);
+      border-radius: 30px;
+      padding: 42px;
+      box-shadow: 0 18px 40px rgba(31, 111, 139, 0.18);
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .cta-box h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+
+    .cta-box p {
+      color: rgba(255, 255, 255, 0.9);
+      max-width: 680px;
+    }
+
+    .cta-box .btn {
+      background: var(--white);
+      color: var(--primary);
+      justify-self: end;
+    }
+
+    .cta-box .btn:hover {
+      background: #eff7fb;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 26px;
+      align-items: stretch;
+    }
+
+    .contact-box {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-box p {
+      margin-bottom: 14px;
+      font-size: 16px;
+      color: var(--muted);
+    }
+
+    .contact-box strong {
+      color: var(--text);
+    }
+
+    .map-placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 320px;
+      background: #f7fafc;
+      border: 2px dashed #c9d8e2;
+      border-radius: 24px;
+      text-align: center;
+      color: var(--muted);
+      padding: 20px;
+    }
+
+    footer {
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      padding: 50px 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr 1fr 1fr;
+      gap: 24px;
+    }
+
+    footer h3,
+    footer h4 {
+      margin-bottom: 14px;
+    }
+
+    footer p,
+    footer li,
+    footer a {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    footer ul {
+      list-style: none;
+    }
+
+    footer li {
+      margin-bottom: 10px;
+    }
+
+    .floating-whatsapp {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 1001;
+      background: #25d366;
+      color: #fff;
+      padding: 14px 18px;
+      border-radius: 999px;
+      font-weight: 800;
+      box-shadow: 0 18px 30px rgba(37, 211, 102, 0.28);
+      transition: 0.25s ease;
+    }
+
+    .floating-whatsapp:hover {
+      transform: translateY(-3px);
+      background: #1ebe5d;
+    }
+
+    .mobile-menu {
+      display: none;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .about-grid,
+      .cta-box,
+      .contact-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-grid,
+      .gallery-grid,
+      .testimonial-grid,
+      .blog-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .cta-box .btn {
+        justify-self: start;
+      }
+
+      .about-images img:last-child {
+        margin-top: 0;
+      }
+
+      .nav {
+        display: none;
+      }
+
+      .mobile-menu {
+        display: inline-flex;
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--primary);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .section {
+        padding: 60px 0;
+      }
+
+      .hero {
+        padding: 70px 0 50px;
+      }
+
+      .hero h2 {
+        font-size: 38px;
+      }
+
+      .hero p,
+      .section-title p,
+      .about-text p {
+        font-size: 16px;
+      }
+
+      .hero-image img {
+        height: 360px;
+      }
+
+      .about-features,
+      .about-images,
+      .service-grid,
+      .gallery-grid,
+      .testimonial-grid,
+      .blog-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar-inner {
+        min-height: 72px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .contact-box {
+        padding: 22px;
+      }
+
+      .cta-box {
+        padding: 28px;
+      }
+
+      .gallery-item img {
+        height: 220px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <h1>Amigo do Pé</h1>
+        <span>Podologia com cuidado e bem-estar</span>
+      </div>
+
+      <nav class="nav">
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#blog">Dicas</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <a
+        class="btn btn-primary"
+        href="https://wa.me/5521972326036?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20os%20serviços%20da%20Amigo%20do%20Pé."
+        target="_blank"
+      >
+        WhatsApp
+      </a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="hero-badge">Saúde, conforto e bem-estar</span>
+        <h2>Cuidado, conforto e bem-estar para os seus pés.</h2>
+        <p>
+          Atendimento acolhedor, profissional e humanizado para adultos, idosos e público em geral.
+          Na <strong>Amigo do Pé</strong>, cada cuidado é pensado para sua saúde e qualidade de vida.
+        </p>
+
+        <div class="hero-actions">
+          <a
+            class="btn btn-primary"
+            href="https://wa.me/5521972326036?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20os%20serviços%20da%20Amigo%20do%20Pé."
+            target="_blank"
+          >
+            Agende pelo WhatsApp
+          </a>
+          <a class="btn btn-secondary" href="#servicos">Conheça nossos serviços</a>
+        </div>
+
+        <p class="hero-note">
+          Valores sob consulta. Fale conosco diretamente pelo WhatsApp.
+        </p>
+      </div>
+
+      <div class="hero-image">
+        <img
+          src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80"
+          alt="Atendimento de podologia"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre" class="section">
+    <div class="container about-grid">
+      <div class="about-text">
+        <div class="section-title">
+          <span class="tag">Sobre a clínica</span>
+          <h2>Atendimento especializado com acolhimento e confiança</h2>
+          <p>
+            A <strong>Amigo do Pé</strong> oferece um atendimento voltado ao cuidado, conforto,
+            higiene, prevenção e qualidade de vida.
+          </p>
+        </div>
+
+        <p>
+          Nosso objetivo é proporcionar bem-estar com um olhar humano, atencioso e profissional
+          em cada atendimento.
+        </p>
+        <p>
+          O espaço foi pensado para receber adultos, idosos e todos que buscam saúde para os pés,
+          com procedimentos realizados de forma cuidadosa e segura.
+        </p>
+
+        <div class="about-features">
+          <div class="feature-box">Atendimento humanizado</div>
+          <div class="feature-box">Ambiente acolhedor</div>
+          <div class="feature-box">Cuidado preventivo</div>
+          <div class="feature-box">Foco em bem-estar</div>
+        </div>
+      </div>
+
+      <div class="about-images">
+        <img
+          src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=900&q=80"
+          alt="Profissional da clínica"
+        />
+        <img
+          src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=900&q=80"
+          alt="Ambiente da clínica"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section id="servicos" class="section services">
+    <div class="container">
+      <div class="section-title">
+        <span class="tag">Serviços</span>
+        <h2>Cuidado completo para a saúde dos seus pés</h2>
+        <p>
+          Procedimentos pensados para aliviar desconfortos, cuidar da saúde e promover bem-estar.
+        </p>
+      </div>
+
+      <div class="service-grid">
+        <article class="card">
+          <h3>Tratamento Tradicional</h3>
+          <ul>
+            <li>Corte de unha</li>
+            <li>Desencravamento simples</li>
+            <li>Retirada de calo e calosidade</li>
+            <li>Hidratação com creme</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Tratamento VIP</h3>
+          <ul>
+            <li>Tudo do tratamento tradicional</li>
+            <li>Esfoliação</li>
+            <li>Massagem</li>
+            <li>Vela terapia</li>
+            <li>Hidratação com vela de cera de coco</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Outros serviços</h3>
+          <ul>
+            <li>Unha encravada com inflamação e infecção</li>
+            <li>Onicocriptose</li>
+            <li>Tratamento domiciliar</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="notice">
+        Valores sob consulta. Fale conosco pelo WhatsApp.
+      </div>
+    </div>
+  </section>
+
+  <section id="galeria" class="section">
+    <div class="container">
+      <div class="section-title">
+        <span class="tag">Galeria</span>
+        <h2>Um espaço pronto para suas fotos reais</h2>
+        <p>
+          A estrutura abaixo está pronta para receber fotos reais de atendimentos, ambiente,
+          antes e depois e resultados de procedimentos.
+        </p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=900&q=80" alt="Antes e depois" />
+          <p>Antes e depois</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=80" alt="Atendimento" />
+          <p>Atendimento</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=900&q=80" alt="Ambiente" />
+          <p>Ambiente</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=900&q=80" alt="Profissional" />
+          <p>Profissional</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=900&q=80" alt="Cuidados especializados" />
+          <p>Cuidados especializados</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=900&q=80" alt="Resultados" />
+          <p>Resultados</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="depoimentos" class="section testimonials">
+    <div class="container">
+      <div class="section-title">
+        <span class="tag">Depoimentos</span>
+        <h2>O carinho de quem já passou por aqui</h2>
+      </div>
+
+      <div class="testimonial-grid">
+        <article class="testimonial">
+          <div class="stars">★★★★★</div>
+          <p>
+            “Fui muito bem atendida e senti muito alívio já na primeira sessão. Ambiente acolhedor e atendimento excelente.”
+          </p>
+          <strong>Mariana S.</strong>
+        </article>
+
+        <article class="testimonial">
+          <div class="stars">★★★★★</div>
+          <p>
+            “Profissional muito atenciosa e cuidadosa. O atendimento foi impecável e meus pés ficaram muito melhores.”
+          </p>
+          <strong>Carlos R.</strong>
+        </article>
+
+        <article class="testimonial">
+          <div class="stars">★★★★★</div>
+          <p>
+            “Gostei muito do atendimento humanizado. Me senti segura, confortável e com vontade de voltar sempre.”
+          </p>
+          <strong>Dona Helena M.</strong>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="blog" class="section">
+    <div class="container">
+      <div class="section-title">
+        <span class="tag">Dicas de cuidados</span>
+        <h2>Conteúdo para orientar e cuidar melhor dos seus pés</h2>
+      </div>
+
+      <div class="blog-grid">
+        <article class="blog-card">
+          <span class="blog-chip">Blog</span>
+          <h3>Como evitar unhas encravadas no dia a dia</h3>
+          <p>Dicas práticas para manter a saúde, o conforto e o bem-estar dos seus pés.</p>
+        </article>
+
+        <article class="blog-card">
+          <span class="blog-chip">Blog</span>
+          <h3>Cuidados com calos e calosidades</h3>
+          <p>Pequenos hábitos ajudam a reduzir desconfortos e manter seus pés saudáveis.</p>
+        </article>
+
+        <article class="blog-card">
+          <span class="blog-chip">Blog</span>
+          <h3>A importância da hidratação dos pés</h3>
+          <p>Hidratar os pés é essencial para prevenir ressecamento e melhorar o conforto.</p>
+        </article>
+
+        <article class="blog-card">
+          <span class="blog-chip">Blog</span>
+          <h3>Quando procurar um podólogo</h3>
+          <p>Entenda os sinais que indicam que é hora de buscar um atendimento especializado.</p>
+        </article>
+
+        <article class="blog-card">
+          <span class="blog-chip">Blog</span>
+          <h3>Cuidados especiais com os pés de idosos</h3>
+          <p>Mais atenção, prevenção e conforto para quem precisa de um cuidado contínuo.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="cta-box">
+        <div>
+          <h2>Agendamentos e valores diretamente pelo WhatsApp</h2>
+          <p>
+            Fale conosco de forma rápida e prática para tirar dúvidas, consultar valores e agendar seu atendimento.
+          </p>
+        </div>
+
+        <a
+          class="btn"
+          href="https://wa.me/5521972326036?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20os%20serviços%20da%20Amigo%20do%20Pé."
+          target="_blank"
+        >
+          Falar no WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" class="section">
+    <div class="container contact-grid">
+      <div class="contact-box">
+        <div class="section-title">
+          <span class="tag">Contato</span>
+          <h2>Entre em contato com a Amigo do Pé</h2>
+        </div>
+
+        <p><strong>Nome:</strong> Amigo do Pé</p>
+        <p><strong>Endereço:</strong> Rua Uruguai, nº 380, Loja 42</p>
+        <p><strong>WhatsApp:</strong> +55 21 97232-6036</p>
+        <p>
+          <strong>Instagram:</strong>
+          <a href="https://www.instagram.com/podologa.daniele/" target="_blank">
+            @podologa.daniele
+          </a>
+        </p>
+
+        <div class="hero-actions">
+          <a
+            class="btn btn-primary"
+            href="https://wa.me/5521972326036?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20os%20serviços%20da%20Amigo%20do%20Pé."
+            target="_blank"
+          >
+            Chamar no WhatsApp
+          </a>
+
+          <a
+            class="btn btn-secondary"
+            href="https://www.instagram.com/podologa.daniele/"
+            target="_blank"
+          >
+            Ver Instagram
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-box">
+        <div class="map-placeholder">
+          Espaço reservado para mapa, foto da fachada ou imagem da clínica.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <h3>Amigo do Pé</h3>
+        <p>
+          Cuidado, acolhimento e bem-estar para quem valoriza a saúde dos pés.
+        </p>
+      </div>
+
+      <div>
+        <h4>Links rápidos</h4>
+        <ul>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#galeria">Galeria</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li>Rua Uruguai, nº 380, Loja 42</li>
+          <li>WhatsApp: +55 21 97232-6036</li>
+          <li>
+            <a href="https://www.instagram.com/podologa.daniele/" target="_blank">
+              Instagram
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Mensagem</h4>
+        <p>“Cuide de quem te sustenta todos os dias.”</p>
+      </div>
+    </div>
+  </footer>
+
+  <a
+    class="floating-whatsapp"
+    href="https://wa.me/5521972326036?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20os%20serviços%20da%20Amigo%20do%20Pé."
+    target="_blank"
+  >
+    WhatsApp
+  </a>
+</body>
+</html>
